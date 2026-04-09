@@ -867,18 +867,7 @@ function EUDRAssessment() {
   return (
     <div ref={topRef} style={{ minHeight: "100vh", background: "#F2F6F9", fontFamily: "'Segoe UI', system-ui, sans-serif" }}>
       {/* NAV */}
-      <div style={{ background: C.navy, borderBottom: `3px solid ${C.teal3}`, padding: isMobile ? "12px 12px" : "14px 32px", display: "flex", alignItems: isMobile ? "flex-start" : "center", justifyContent: "space-between", gap: isMobile ? 10 : 16, position: "sticky", top: 0, zIndex: 100, flexWrap: isMobile ? "wrap" : "nowrap" }}>
-        <div style={{ flexShrink: 0 }}><Logo height={isMobile ? 34 : 44} /></div>
-        <div style={{ fontSize: isMobile ? 12 : 13, fontWeight: 600, color: C.teal1, flex: 1, lineHeight: 1.25, minWidth: 0, textAlign: isMobile ? "left" : "center" }}>
-          EUDR Compliance Assessment · Reg. UE 2023/1115
-        </div>
-        {step === "assessment" && (
-          <div style={{ fontSize: isMobile ? 11 : 12, color: "#8AABBE", flexShrink: 0, lineHeight: 1.2, textAlign: "right" }}>
-            {answeredCount}/{TOTAL_Q} risposte
-          </div>
-        )}
-      </div>
-
+      
       <div style={{ maxWidth: 900, margin: "0 auto", padding: isMobile ? "24px 12px" : "40px 20px" }}>
 
         {/* WELCOME */}
@@ -989,12 +978,7 @@ function EUDRAssessment() {
       </div>
 
       {/* FOOTER */}
-      <div style={{ background: C.navy, color: "#ccc", textAlign: "center", padding: isMobile ? "20px 12px" : "20px", fontSize: 12, marginTop: 60 }}>
-        <div style={{ display: "flex", justifyContent: "center" }}><Logo height={isMobile ? 34 : 44} /></div>
-        <div style={{ marginTop: 10 }}>
-          ISA Digital Consulting — ESG Business Unit · Valutazione basata su Reg. UE 2023/1115, versione consolidata dicembre 2025
-        </div>
-      </div>
+      
     </div>
   );
 }
