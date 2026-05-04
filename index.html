@@ -457,6 +457,7 @@ const sendResultsEmail = (formData, sectionScores, gaps, totalScore, pct, level)
     from_name: `${formData.name} — ${formData.company}`,
     reply_to: formData.email,
     message,
+    ass_type: ass_type
   }).catch(() => {});
 };
 
