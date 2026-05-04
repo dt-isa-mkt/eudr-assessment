@@ -450,6 +450,7 @@ const sendResultsEmail = (formData, sectionScores, gaps, totalScore, pct, level)
   window.emailjs.init(EMAILJS_KEY);
   const secSummary = sectionScores.map(s => `${s.title}: ${s.score}/${s.max} (${s.pct}%)`).join("\n");
   const gapsText = gaps.length ? gaps.map((g, i) => `${i+1}. [${g.section.title}] ${g.text} (${g.ref})`).join("\n") : "Nessun gap critico rilevato.";
+  const ass_type= 'EUDR Assessment';
   const message = `EUDR ASSESSMENT — ISA Digital Consulting\n\nLEAD\nNome: ${formData.name}\nAzienda: ${formData.company}\nRuolo: ${formData.role}\nEmail: ${formData.email}\nTelefono: ${formData.phone}\nData: ${new Date().toLocaleDateString("it-IT")}\n\nRISULTATI\nPunteggio: ${totalScore}/${MAX_SCORE} (${pct}%)\nLivello: ${level.label}\n\nSEZIONI\n${secSummary}\n\nGAP CRITICI\n${gapsText}`;
   window.emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, {
     to_name: "ISA Digital Consulting",
